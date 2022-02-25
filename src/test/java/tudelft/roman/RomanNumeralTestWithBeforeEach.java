@@ -21,8 +21,14 @@ public class RomanNumeralTestWithBeforeEach {
 
     @Test
     public void numberWithManyDigits() {
-        int result = roman.convert("VIII");
-        Assertions.assertEquals(8, result);
+        int result = roman.convert("XXX");
+        Assertions.assertEquals(30,result);
+    }
+
+    @Test
+    public void numberWithDifferentDigits() {
+        int result = roman.convert("XXVIII");
+        Assertions.assertEquals(28, result);
     }
 
     @Test
@@ -36,4 +42,20 @@ public class RomanNumeralTestWithBeforeEach {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void emptyString() {
+        int result = roman.convert("");
+        Assertions.assertEquals(0,result);
+    }
+
+//    @Test
+//    public void invalidRomanNumber() {
+//        Exception thrown = Assertions.assertThrows(
+//                Exception.class,
+//                () -> roman.convert("IIV"),
+//                "Incorrect Roman number exception expected"
+//        );
+//        Assertions.assertTrue(thrown.getMessage().contains(""));
+//    }
 }
