@@ -5,11 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class NumFinderTest {
-    NumFinder nf;
+    private NumFinder nf;
 
     @BeforeEach
     void setUp() {
-        nf = new NumFinder();
+        this.nf = new NumFinder();
     }
 
     @Test
