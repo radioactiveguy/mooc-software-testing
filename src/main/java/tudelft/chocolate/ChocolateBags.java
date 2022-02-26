@@ -10,7 +10,18 @@ public class ChocolateBags {
         if(small < total)
             return -1;
         return total;
-
     }
+/*
+     not enough bars
+     2 small 1 big and total 10
 
+     only big bars are enough
+     0 small 3 big and total 15
+
+     only small bars are enough
+     4 small 0 big and total 3
+
+     small and big bars
+     3 small 4 big and total 23
+*/
 }
