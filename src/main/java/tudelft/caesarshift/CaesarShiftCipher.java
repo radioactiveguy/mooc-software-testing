@@ -3,6 +3,8 @@ package tudelft.caesarshift;
 public class CaesarShiftCipher {
 
     public String CaesarShiftCipher(String message, int shift){
+        if(message == null)
+            throw new NullPointerException("Expected String message but was null");
         StringBuilder sb = new StringBuilder();
         char currentChar;
         int length = message.length();
@@ -12,8 +14,10 @@ public class CaesarShiftCipher {
         for(int i = 0; i < length; i++){
             currentChar = message.charAt(i);
            
-            sb.append(currentChar);
-            if (currentChar > 'z' || currentChar < 'a') {
+            if(currentChar == ' '){
+                sb.append(currentChar);
+                continue;
+            } else if (currentChar > 'z' || currentChar < 'a') {
                 return "invalid";
             } else if ((char) (currentChar + shift) > 'z') {
                 currentChar = (char) (currentChar - 26);
@@ -22,7 +26,6 @@ public class CaesarShiftCipher {
             }
             sb.append((char) (currentChar + shift));
         }
-
         return sb.toString();
     }
 }
