@@ -21,6 +21,7 @@ class TwoNumbersSum {
             if (total >= 10){
                 complement = 1;
                 total -= 10;
+                if(Math.max(first.size(), second.size()) == 1) result.add(i, complement);
             }
             result.add(i, total);
         }
